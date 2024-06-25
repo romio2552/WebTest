@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2C2C2C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.login-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    background-color: #5A5AFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #4848d8;
+}
+
+.divider {
+    margin: 20px 0;
+    color: #bbb;
+    position: relative;
+    text-align: center;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    background-color: #bbb;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.google-btn, .microsoft-btn {
+    background-color: #5A5AFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.google-btn:hover, .microsoft-btn:hover {
+    background-color: #4848d8;
+}
+
+.signup-link {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.footer-date {
+    color: #888;
+    font-size: 0.8em;
+    text-align: center;
+}

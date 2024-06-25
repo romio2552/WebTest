@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <form class="login-form" id="loginForm">
+            <div class="input-group">
+                <label for="username">username :</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input-group">
+                <label for="password">password :</label>
+                <input type="password" id="password" name="password">
+                <a href="#" class="forgot-password">forgot password</a>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="divider">or</div>
+        <div class="social-login">
+            <button class="google-btn">Continue with Google</button>
+            <button class="microsoft-btn">Continue with Microsoft</button>
+        </div>
+        <a href="#" class="signup-link">Don’t have an account</a>
+    </div>
+    <div class="footer-date">
+        <span id="current-date-time"></span>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // ป้องกันการส่งแบบฟอร์มไปที่เซิร์ฟเวอร์
+
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+            // URL ของ Google Apps Script ที่คุณคัดลอกมา
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbytZRKSOYnqY0-oOrJ9B6gpIqrqUu0nFfP5qrkDsDOl3I4AACxqbBYou1EYSAcQ6C40/exec'; // แทนที่ด้วย URL ที่ถูกต้อง
+
+            // สร้าง URL สำหรับส่ง request แบบ GET
+            const url = `${scriptURL}?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+
+            // ส่งข้อมูลไปยัง Google Sheets ด้วย fetch และ GET request
+            fetch(url, {
+                method: 'GET'
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Success:', result);
+                alert('Login data saved successfully');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error saving login data');
+            });
+        });
+    </script>
+</body>
+</html>
